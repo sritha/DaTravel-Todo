@@ -1,7 +1,7 @@
 $(function() {
     
     TodoList = Backbone.Model.extend({
-        urlRoot: '/app_dev.php/todoLists/',
+        urlRoot: '/todoLists/',
         initialize: function() {
         }
     });
@@ -9,7 +9,7 @@ $(function() {
     TodoListsCollection = Backbone.Collection.extend({
             model: TodoList,
             comparator: false,
-            url: '/app_dev.php/todoLists',
+            url: '/todoLists',
             initialize: function() {
 
             }
@@ -148,6 +148,8 @@ $(function() {
             }
 
             this.model.set('is_done', !this.model.get('is_done'));
+            this.model.unset('todo_list');
+            //console.log(this.model.keys())
             this.model.save(null);
         }
     });
@@ -160,7 +162,7 @@ $(function() {
                 this.itemViews = [];
                 this.scrollDistance = 18;
                 this.distanceScrolled = 0;
-                this.itemsUrlRoot = '/app_dev.php/todoLists/'+this.model.get('id')+'/items';
+                this.itemsUrlRoot = '/todoLists/'+this.model.get('id')+'/items';
                 this.collection = new ItemCollection(this.model.get('items'), {
                     urlRoot: this.itemsUrlRoot
                 });
@@ -201,8 +203,10 @@ $(function() {
             },
             saveItem: function() {
                 this.$el.find('.error').remove();
+
                 var item = new Item({name: $('#new-item').val(), is_done: false});
                 item.urlRoot = this.itemsUrlRoot;
+
                 var that = this;
                 item.save(null, {
                     success: function() {
