@@ -1,7 +1,7 @@
-symfony2-todo
+DaTravel-Todo
 =============
 
-[![Build Status](https://github.com/sritha/DaTravel-Todo.git)](https://github.com/sritha/DaTravel-Todo.git)
+Todo List Manager with REST APIs using Symfony2
 
 ### Installation
 
