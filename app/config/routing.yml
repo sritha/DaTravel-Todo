@@ -1,0 +1,5 @@
+todo_rest:
+    resource: "@TodoRestBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

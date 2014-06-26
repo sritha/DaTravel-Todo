@@ -1,0 +1,6 @@
+items:
+    type: rest
+    resource: Todo\Bundle\RestBundle\Controller\ItemsController
+todoLists:
+    type: rest
+    resource: Todo\Bundle\RestBundle\Controller\TodoListsController

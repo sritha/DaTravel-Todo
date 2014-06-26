@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Todo</title>
+    <link  rel="stylesheet/less" href="/css/master.less" type="text/css" media="all" />
+    <script src="/js/less.js" type="text/javascript"></script>
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/underscore.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/json2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/backbone.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/models/Todo.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="notepad">
+      <div id="overlay">
+      	
+      </div>
+    </div>
+
+    <!--Templates -->
+    
+    <script type="text/template" id="todoLists-template">
+        <h1>Todo Lists</h1>
+        <a href="#" id="btn-add">+ Create list</a>
+        <div id="list-wrapper">
+            <ul id="all-lists">
+            </ul>
+            <div id="paging">
+                <a href="#" id="btn-up"></a>
+                <a href="#" id="btn-down"></a>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/template" id="todoLists-lists-template">
+        <a href="#"><%- name %></a>
+    </script>
+    
+    <script type="text/template" id="todoList-template">
+        <div id="lists-button"><a href="#">All lists</a></div>
+        <h1><%- name %></h1>
+        <a href="#" id="btn-add">+ Add item</a>
+        <div id="list-wrapper">
+            <ul id="current-list">
+
+            </ul>
+            <div id="paging">
+                <a href="#" id="btn-up"></a>
+                <a href="#" id="btn-down"></a>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="add-item-template">
+        <li id="add-item">
+                <div></div>
+                <div>
+                    <input type="text" id="new-item" />
+                    <a href="#" class="btn" id="btn-save">Save</a>
+                    <a href="#" class="btn" id="btn-cancel">Cancel</a>
+                </div>	
+        </li>
+    </script>
+    
+    <script type="text/template" id="create-list-template">
+        <div class="dialog-overlay dialog"></div>
+        <div id="create-list-dialog" class="dialog">
+            <h2>Create a new list</h2>
+            <div>
+                <label for="list-name">List name</label>
+                <input type="text" name="name" id="list-name">
+            </div>
+            <a href="#" id="create-list-submit" class="btn">Save</a>
+            <a href="#" class="btn" id="btn-cancel">Cancel</a>
+        </div>
+    </script>
+
+    <script type="text/template" id="item-template">
+        <div><input class="cb" type="checkbox" <% (is_done ? print('checked') : print('')); %>/></div>
+
+        <div class="name-display  <% (is_done ? print('task-done') : print('')); %>">
+            <%- name %>
+        </div>
+
+    </script>
+
+		<!--/Templates -->
+
+  </body>
+</html>
+
