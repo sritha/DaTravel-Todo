@@ -62,6 +62,10 @@ php app/console doctrine:schema:update --force
 ```
 
 
+All Done .. 
+
+
+
 
 
 
