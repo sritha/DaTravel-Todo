@@ -43,12 +43,6 @@ Now Create Database Using Doctrine
 php app/console doctrine:database:create
 ```
 
-Now Create Database Using Doctrine
-
-```bash
-php app/console doctrine:database:create
-```
-
 Generate Entities
 
 ```bash
